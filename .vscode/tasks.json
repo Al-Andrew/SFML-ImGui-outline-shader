@@ -1,0 +1,29 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "shell",
+			"label": "Build&Run Debug",
+			"command": "g++ -c src/*.cpp -std=c++14 -g -Wall -m64 -I include -I ${workspaceFolder}/include/SFML/include/ -I ${workspaceFolder}/include/ImGui -I ${workspaceFolder}/include/ImGui-SFML && g++ *.o -o bin/debug/main -L ${workspaceFolder}/include/SFML/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 && start bin/debug/main",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		},
+		{
+			"type": "shell",
+			"label": "Build&Run Release",
+			"command": "g++ -c src/*.cpp -std=c++14 -O3 -Wall -m64 -I include -I ${workspaceFolder}/include/SFML/include/ -I ${workspaceFolder}/include/ImGui -I ${workspaceFolder}/include/ImGui-SFML && g++ *.o -o bin/release/main -s -L ${workspaceFolder}/include/SFML/lib -lsfml-graphics -lsfml-window -lsfml-system -lopengl32 && start bin/release/main",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": "build"
+		}
+	]
+}
