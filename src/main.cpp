@@ -5,6 +5,8 @@
 #include <SFML/System.hpp>
 #include <SFML/Window.hpp>
 
+#include "helpers.hpp"
+
 int main()
 {
     sf::RenderWindow window(sf::VideoMode(640, 480), "");
